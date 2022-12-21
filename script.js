@@ -13,16 +13,28 @@ for (let i = 0; i < inputs.length; i++) {
 
     switch (e.target.name) {
       case 'celcius':
-        fahrenheit.value = Number(celcius.value) * 1.8 + 32;
-        kelvin.value = Number(celcius.value) + 273.15;
+        fahrenheit.value = +celcius.value * 1.8 + 32;
+        kelvin.value = +celcius.value + 273.15;
+        if (celcius.value === '') {
+          fahrenheit.value = '';
+          kelvin.value = '';
+        }
         break;
       case 'fahrenheit':
-        celcius.value = (Number(fahrenheit.value) - 32) / 1.8;
-        kelvin.value = (Number(fahrenheit.value) - 32) / 18 + 273.15;
+        celcius.value = (+fahrenheit.value - 32) / 1.8;
+        kelvin.value = (+fahrenheit.value - 32) / 18 + 273.15;
+        if (fahrenheit.value === '') {
+          celcius.value = '';
+          kelvin.value = '';
+        }
         break;
       case 'kelvin':
-        celcius.value = Number(kelvin.value) - 273.15;
-        fahrenheit.value = (Number(kelvin.value) - 273.15) * 1.8 + 32;
+        celcius.value = +kelvin.value - 273.15;
+        fahrenheit.value = (+kelvin.value - 273.15) * 1.8 + 32;
+        if (kelvin.value === '') {
+          fahrenheit.value = '';
+          celcius.value = '';
+        }
         break;
     }
   });
