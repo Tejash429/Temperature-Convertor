@@ -20,29 +20,36 @@
         <h1>converter</h1>
       </header>
       <div class="inputs">
-        <input
-          type="number"
-          name="celcius"
-          id="celcius"
-          class="input"
-          placeholder="Celcius"
-        />
-
-        <input
-          type="number"
-          name="fahrenheit"
-          id="fahrenheit"
-          class="input"
-          placeholder="Fahrenheit"
-        />
-
-        <input
-          type="number"
-          name="kelvin"
-          id="kelvin"
-          class="input"
-          placeholder="Kelvin"
-        />
+        <div class="input-group">
+          <input
+            type="number"
+            name="celcius"
+            id="celcius"
+            class="input"
+            placeholder="Celcius"
+          />
+          <div class="input-group-addon">°C</div>
+        </div>
+        <div class="input-group">
+          <input
+            type="number"
+            name="fahrenheit"
+            id="fahrenheit"
+            class="input"
+            placeholder="Fahrenheit"
+          />
+          <div class="input-group-addon">°F</div>
+        </div>
+        <div class="input-group">
+          <input
+            type="number"
+            name="kelvin"
+            id="kelvin"
+            class="input"
+            placeholder="Kelvin"
+          />
+          <div class="input-group-addon">K</div>
+        </div>
       </div>
     </main>
     <script src="script.js"></script>
