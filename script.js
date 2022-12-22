@@ -3,17 +3,16 @@
 const celcius = document.getElementById('celcius');
 const fahrenheit = document.querySelector('#fahrenheit');
 const kelvin = document.querySelector('#kelvin');
-const inputs = document.getElementsByClassName('input');
+const inputs = document.querySelectorAll('.input');
 
 const copyBtn1 = document.querySelector('.copyText1');
 const copyBtn2 = document.querySelector('.copyText2');
 const copyBtn3 = document.querySelector('.copyText3');
 
-for (let i = 0; i < inputs.length; i++) {
-  let input = inputs[i];
-
+inputs.forEach((input) => {
   input.addEventListener('input', function (e) {
     let value = parseFloat(e.target.value);
+    const copyBtn = document.querySelectorAll('.copyBtn');
 
     switch (e.target.name) {
       case 'celcius':
@@ -44,19 +43,19 @@ for (let i = 0; i < inputs.length; i++) {
         }
         break;
     }
-    copyBtn1.onclick = () => {
-      celcius.select();
-      navigator.clipboard.writeText(celcius.value);
-    };
-
-    copyBtn2.onclick = () => {
-      fahrenheit.select();
-      navigator.clipboard.writeText(fahrenheit.value);
-    };
-
-    copyBtn3.onclick = () => {
-      kelvin.select();
-      navigator.clipboard.writeText(kelvin.value);
-    };
   });
-}
+});
+copyBtn1.onclick = () => {
+  celcius.select();
+  navigator.clipboard.writeText(celcius.value);
+};
+
+copyBtn2.onclick = () => {
+  fahrenheit.select();
+  navigator.clipboard.writeText(fahrenheit.value);
+};
+
+copyBtn3.onclick = () => {
+  kelvin.select();
+  navigator.clipboard.writeText(kelvin.value);
+};

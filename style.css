@@ -32,7 +32,6 @@ h1 {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  max-width: 768px;
   margin: 0 auto;
   max-width: 500px;
 }
@@ -75,7 +74,8 @@ h1 {
 .copyBtn {
   background-color: #000;
   color: wheat;
-  padding: 13px;
+  transition: 0.4s;
+  padding: 12.4px;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
 }
