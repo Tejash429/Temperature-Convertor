@@ -47,15 +47,15 @@ inputs.forEach((input) => {
 });
 copyBtn1.onclick = () => {
   celcius.select();
-  navigator.clipboard.writeText(celcius.value);
+  navigator.clipboard.writeText(`${celcius.value}°C`);
 };
 
 copyBtn2.onclick = () => {
   fahrenheit.select();
-  navigator.clipboard.writeText(fahrenheit.value);
+  navigator.clipboard.writeText(`${fahrenheit.value}°F`);
 };
 
 copyBtn3.onclick = () => {
   kelvin.select();
-  navigator.clipboard.writeText(kelvin.value);
+  navigator.clipboard.writeText(`${kelvin.value} K`);
 };
