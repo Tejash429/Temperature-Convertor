@@ -4,16 +4,12 @@ const celcius = document.getElementById('celcius');
 const fahrenheit = document.querySelector('#fahrenheit');
 const kelvin = document.querySelector('#kelvin');
 const inputs = document.querySelectorAll('.input');
+const copyBtn = document.querySelectorAll('.copyText');
 
-const copyBtn1 = document.querySelector('.copyText1');
-const copyBtn2 = document.querySelector('.copyText2');
-const copyBtn3 = document.querySelector('.copyText3');
-
+//Conversion Logic
 inputs.forEach((input) => {
   input.addEventListener('input', function (e) {
     let value = parseFloat(e.target.value);
-    const copyBtn = document.querySelectorAll('.copyBtn');
-
     switch (e.target.name) {
       case 'celcius':
         fahrenheit.value = value * 1.8 + 32;
@@ -22,7 +18,6 @@ inputs.forEach((input) => {
           fahrenheit.value = '';
           kelvin.value = '';
         }
-
         break;
 
       case 'fahrenheit':
@@ -45,17 +40,27 @@ inputs.forEach((input) => {
     }
   });
 });
-copyBtn1.onclick = () => {
-  celcius.select();
-  navigator.clipboard.writeText(`${celcius.value}°C`);
-};
 
-copyBtn2.onclick = () => {
-  fahrenheit.select();
-  navigator.clipboard.writeText(`${fahrenheit.value}°F`);
-};
-
-copyBtn3.onclick = () => {
-  kelvin.select();
-  navigator.clipboard.writeText(`${kelvin.value} K`);
-};
+//Copy Logic
+copyBtn.forEach((copy) => {
+  copy.addEventListener('click', function (e) {
+    const id = e.target.id;
+    if (!celcius.value || !fahrenheit.value || !kelvin.value) {
+      alert(`Please Enter Temperature`);
+    } else {
+      switch (id) {
+        case 'cel':
+          celcius.select();
+          navigator.clipboard.writeText(`${celcius.value}°C`);
+          break;
+        case 'far':
+          fahrenheit.select();
+          navigator.clipboard.writeText(`${fahrenheit.value}°F`);
+          break;
+        case 'kel':
+          kelvin.select();
+          navigator.clipboard.writeText(`${kelvin.value} K`);
+      }
+    }
+  });
+});

@@ -10,10 +10,6 @@
       type="image/x-icon"
     />
     <title>Temperature Converter</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
     <link rel="stylesheet" href="style.css" />
   </head>
 
@@ -32,8 +28,8 @@
             placeholder="Celcius"
           />
           <div class="input-group-addon">°C</div>
-          <button class="copyText1 copyBtn">
-            <i class="ph-copy"></i>
+          <button class="copyText copyBtn" id="cel">
+            <i class="ph-copy" id="cel"></i>
           </button>
         </div>
         <div class="input-group">
@@ -45,8 +41,8 @@
             placeholder="Fahrenheit"
           />
           <div class="input-group-addon">°F</div>
-          <button class="copyText2 copyBtn">
-            <i class="ph-copy"></i>
+          <button class="copyText copyBtn" id="far">
+            <i class="ph-copy" id="far"></i>
           </button>
         </div>
         <div class="input-group">
@@ -58,12 +54,13 @@
             placeholder="Kelvin"
           />
           <div class="input-group-addon">K</div>
-          <button class="copyText3 copyBtn">
-            <i class="ph-copy"></i>
+          <button class="copyText copyBtn" id="kel">
+            <i class="ph-copy" id="kel"></i>
           </button>
         </div>
       </div>
     </main>
     <script src="script.js"></script>
     <script src="https://unpkg.com/phosphor-icons"></script>
+  </body>
 </html>
